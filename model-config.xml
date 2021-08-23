@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Models>
+    <chickenmeal>/media/gltf/chickenmeal_2/chickenmeal.gltf</chickenmeal>
+    <pizza>/media/gltf/pizza3/pizza.gltf</pizza>
+    <burger>/media/gltf/burger4/burger.gltf</burger>
+    <shawarma>/media/gltf/shwarma/shwarma.gltf</shawarma>
+    <kebab>/media/gltf/kebeb/kebab.gltf</kebab>
+    <pasta>/media/gltf/pasta3/pasta.gltf</pasta>    
+    <cupcake>/media/gltf/chickenmeal_2/chickenmeal.gltf</cupcake>
+    <kluski>/media/gltf/chickenmeal_2/chickenmeal.gltf</kluski>
+</Models>
