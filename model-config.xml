@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Models>
-    <chickenmeal>/media/gltf/chickenmeal_2/chickenmeal_Emb.gltf</chickenmeal>
+    <chickenmeal>https://rawcdn.githack.com/Najaf93/WebXR-Demo-Aframe/a822d29c4cc1092b409b17abccdf64bfbe9233d5/media/gltf/chickenmeal_2/chickenmeal_Emb.gltf</chickenmeal>
     <pizza>/media/gltf/pizza3/pizza.gltf</pizza>
     <burger>/media/gltf/burger4/burger.gltf</burger>
     <shawarma>/media/gltf/shwarma/shwarma.gltf</shawarma>
