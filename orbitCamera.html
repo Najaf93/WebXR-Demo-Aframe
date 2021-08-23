@@ -1,0 +1,72 @@
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no'>
+<meta name='mobile-web-app-capable' content='yes'>
+<meta name='apple-mobile-web-app-capable' content='yes'>
+<link rel='icon' type='image/png' sizes='32x32' href='favicon-32x32.png'>
+<link rel='icon' type='image/png' sizes='96x96' href='favicon-96x96.png'>
+<title>Restaurant Menu-AR</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-extras@3.3.0/dist/aframe-extras.min.js"></script>
+  <script src="https://cdn.rawgit.com/tizzle/aframe-orbit-controls-component/master/dist/aframe-orbit-controls-component.min.js"></script>
+  <link rel='stylesheet' href='css/common.css'>
+</head>
+
+<body> 
+    <script>
+        var currentM=null;
+    </script>
+    
+    <a-scene vr-mode-ui="enabled: false">
+         <!-- vr-mode-ui="enterARButton: #arbutton; enterVRButton: #VRbutton"> -->
+        <!-- Skybox -->
+        <a-sky color="#3d3d3d"></a-sky>
+        <!-- Lights -->
+        <a-entity light="type: ambient; color: #FFF"></a-entity>
+        <a-entity light="type: point; intensity: 0.25; distance: 50; decay: 2" position="0 10 0"></a-entity>
+        <a-entity light="type: directional; color: #FFF; intensity: 0.3" position="-0.5 1 1"></a-entity>
+
+        <a-assets>
+            <a-asset-item id="chickenmeal" src="/media/gltf/chickenmeal_2/chickenmeal.gltf"></a-asset-item>
+            <a-asset-item id="pizza" src="/media/gltf/pizza3/pizza.gltf"></a-asset-item>
+            <a-asset-item id="burger" src="/media/gltf/burger4/burger.gltf"></a-asset-item>
+            <a-asset-item id="shawarma" src="/media/gltf/shwarma/shwarma.gltf"></a-asset-item>
+            <a-asset-item id="kebab" src="/media/gltf/kebeb/kebab.gltf"></a-asset-item>
+            <a-asset-item id="pasta" src="/media/gltf/pasta3/pasta.gltf"></a-asset-item>
+        </a-assets>
+
+        <a-entity
+            id="camera"
+            camera
+            position="0 0 4"
+            orbit-controls="
+                target: #target;
+                enableDamping: true;
+                dampingFactor: 0.25;
+                rotateSpeed:0.14;
+                minAzimuthAngle:-90;
+                maxAzimuthAngle:90;"
+            mouse-cursor="">
+        </a-entity>
+
+        <a-entity id="target" gltf-model="#" position="0 0 4.5"></a-entity>
+        <!-- <a-entity id="target" geometry="primitive: box" scale="1 1 1" position="0 0 0" material="color: #cc0000"></a-entity> -->
+        <!-- <a-entity id="target" gltf-model="#tree" scale="1 1 1" position="0 0 0" ></a-entity> -->
+        <!-- <a-entity geometry="primitive: box" scale="1 1 1" position="8 0 0" material="color: #ffffff"></a-entity>
+        <a-entity geometry="primitive: box" scale="1 1 1" position="-8 0 0" material="color: #ffffff"></a-entity>
+        <a-entity geometry="primitive: box" scale="1 1 1" position="16 0 0" material="color: #ffffff"></a-entity>
+        <a-entity geometry="primitive: box" scale="1 1 1" position="-16 0 0" material="color: #ffffff"></a-entity> -->
+        
+        <script>
+            var queryString = location.search.substring(1);
+            var lantern  = document.getElementById('target');
+            lantern.setAttribute('gltf-model', '#'+queryString);
+            currentM=queryString;
+        </script>
+    </a-scene>
+    <a id="arbutton" href=""><img src="./images/ar.png" id="fixedbutton"></a>
+    <!-- <a id="VRbutton"></a> -->
+    <script>
+        document.getElementById('arbutton').setAttribute('href',"./AR_app_page.html?"+currentM);
+    </script>
+</body>
